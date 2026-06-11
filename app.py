@@ -236,15 +236,11 @@ st.table(df)
 st.header("Conclusão")
 
 st.write(f"""
-O sistema de lógica nebulosa foi capaz de classificar o conforto térmico
-a partir dos valores de temperatura e umidade.
+O sistema de lógica nebulosa desenvolvido foi capaz de classificar o nível de conforto térmico a partir dos valores de temperatura e umidade definidos como entradas.
 
-No primeiro caso (22°C e 40% de umidade), o valor obtido foi
-**{caso1:.2f}**, indicando um nível de conforto moderado.
+No primeiro caso analisado (22°C e 40% de umidade), o sistema retornou um valor de conforto igual a **{caso1:.2f}**, classificando a condição como **moderada**, conforme as regras nebulosas estabelecidas.
 
-No segundo caso (35°C e 25% de umidade), o valor obtido foi
-**{caso2:.2f}**, indicando uma condição mais próxima do desconforto.
+No segundo caso (35°C e 25% de umidade), o valor obtido foi **{caso2:.2f}**, indicando uma condição de **desconforto térmico**, resultado compatível com a regra que associa temperaturas elevadas e baixa umidade a níveis reduzidos de conforto.
 
-Os resultados demonstram o funcionamento do sistema fuzzy por meio das
-regras definidas para temperatura e umidade.
+Os resultados obtidos demonstram que a lógica nebulosa permite representar situações reais de forma flexível, utilizando conjuntos nebulosos e regras linguísticas para realizar a classificação do conforto térmico de maneira intuitiva e eficiente.
 """)
