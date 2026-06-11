@@ -9,9 +9,6 @@ st.title("Sistema Fuzzy para Conforto Térmico")
 st.write(""" Este sistema utiliza Lógica Nebulosa para classificar o nível de conforto térmico com base na temperatura e na umidade. """)
 st.title("Sistema Fuzzy para Conforto Térmico")
 
-st.write("""
-Este sistema utiliza Lógica Nebulosa para classificar o nível de conforto térmico com base na temperatura e na umidade.
-""")
 st.header("Variáveis Nebulosas")
 st.markdown("""
 ### Entradas
