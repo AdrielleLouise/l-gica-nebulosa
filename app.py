@@ -163,11 +163,30 @@ regra2 = ctrl.Rule(
 regra3 = ctrl.Rule(
     temperatura['quente'] & umidade['baixa'],
     conforto['desconfortavel'])
-
+regra4 = ctrl.Rule(
+    temperatura['frio'] & umidade['baixa'],
+    conforto['confortavel'])
+regra5 = ctrl.Rule(
+    temperatura['frio'] & umidade['media'],
+    conforto['moderado'])
+regra6 = ctrl.Rule(
+    temperatura['agradavel'] & umidade['baixa'],
+    conforto['confortavel'])
+regra7 = ctrl.Rule(
+    temperatura['agradavel'] & umidade['alta'],
+    conforto['moderado'])
+regra8 = ctrl.Rule(
+    temperatura['quente'] & umidade['alta'],
+    conforto['desconfortavel'])
 sistema = ctrl.ControlSystem([
     regra1,
     regra2,
-    regra3
+    regra3,
+    regra4,
+    regra5,
+    regra6,
+    regra7,
+    regra8
 ])
 st.header("Simulação Interativa")
 temp = st.slider(
