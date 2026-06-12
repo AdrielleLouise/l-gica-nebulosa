@@ -10,26 +10,26 @@ st.write(""" Este sistema utiliza Lógica Nebulosa para classificar o nível de 
 st.title("Sistema Fuzzy para Conforto Térmico")
 
 st.header("Variáveis Nebulosas")
-st.markdown("""
-### Entradas
-
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader("Entradas")
+    st.markdown("""
 **Temperatura**
 - Frio
 - Agradável
 - Quente
-
 **Umidade**
 - Baixa
 - Média
-- Alta
-
-### Saída
-
+- Alta""")
+with col2:
+    st.subheader("Saída")
+    st.markdown("""
 **Conforto**
+
 - Desconfortável
 - Moderado
-- Confortável
-""")
+- Confortável""")
 # variáveis de entrada
 temperatura = ctrl.Antecedent(np.arange(0, 41, 1), 'temperatura')
 umidade = ctrl.Antecedent(np.arange(0, 101, 1), 'umidade')
