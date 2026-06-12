@@ -9,7 +9,7 @@ st.title("Sistema Fuzzy para Conforto Térmico")
 st.write(""" Este sistema utiliza Lógica Nebulosa para classificar o nível de conforto térmico com base na temperatura e na umidade. """)
 st.title("Sistema Fuzzy para Conforto Térmico")
 
-st.header("↳Variáveis Nebulosas")
+st.header("➣Variáveis Nebulosas")
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("Entradas")
@@ -77,7 +77,6 @@ st.pyplot(fig)
 
 #regras nebulosas
 st.header("Regras Nebulosas")
-
 st.markdown("""
 **Regra 1**
 
@@ -99,8 +98,7 @@ ENTÃO Conforto é Moderado
 
 SE Temperatura é Quente E Umidade é Baixa
 
-ENTÃO Conforto é Desconfortável
-""")
+ENTÃO Conforto é Desconfortável!""")
 regra1 = ctrl.Rule(temperatura['frio'] & umidade['alta'], conforto['desconfortavel'])
 regra2 = ctrl.Rule(temperatura['agradavel'] & umidade['media'], conforto['moderado'])
 regra3 = ctrl.Rule(temperatura['quente'] & umidade['baixa'], conforto['desconfortavel'])
@@ -134,7 +132,7 @@ def calcular_conforto(temp, umi):
     return sim.output['conforto']
 caso1 = calcular_conforto(22, 40)
 caso2 = calcular_conforto(35, 25)
-st.header("Casos Solicitados pelo Professor Jorge")
+st.header("⚠︎Casos Solicitados pelo Professor Jorge ♔")
 df = pd.DataFrame({"Temperatura (°C)": [22, 35], "Umidade (%)": [40, 25], "Conforto": 
     [
         round(caso1, 2), round(caso2, 2)
