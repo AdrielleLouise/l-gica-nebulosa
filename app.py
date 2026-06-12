@@ -18,6 +18,7 @@ with col1:
 - Frio
 - Agradável
 - Quente
+
 **Umidade**
 - Baixa
 - Média
