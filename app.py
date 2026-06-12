@@ -80,25 +80,20 @@ st.header(" ⚠︎ Regras Nebulosas")
 st.markdown("""
 **Regra 1**
 
-SE Temperatura é Fria E Umidade é Alta
-
-ENTÃO Conforto é Desconfortável
+Se Temperatura é Fria E Umidade é Alta, então o conforto é **Desconfortável.**
 
 ---
 
 **Regra 2**
 
-SE Temperatura é Agradável E Umidade é Média
-
-ENTÃO Conforto é Moderado
+Se Temperatura é Agradável E Umidade é Média, então o Conforto é **Moderado.**
 
 ---
 
 **Regra 3**
 
-SE Temperatura é Quente E Umidade é Baixa
+Se Temperatura é Quente E Umidade é Baixa, então o Conforto é **Desconfortável.**""")
 
-ENTÃO Conforto é Desconfortável!""")
 regra1 = ctrl.Rule(temperatura['frio'] & umidade['alta'], conforto['desconfortavel'])
 regra2 = ctrl.Rule(temperatura['agradavel'] & umidade['media'], conforto['moderado'])
 regra3 = ctrl.Rule(temperatura['quente'] & umidade['baixa'], conforto['desconfortavel'])
