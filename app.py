@@ -100,60 +100,25 @@ SE Temperatura é Quente E Umidade é Baixa
 
 ENTÃO Conforto é Desconfortável
 """)
-regra1 = ctrl.Rule(
-    temperatura['frio'] & umidade['alta'],
-    conforto['desconfortavel'])
-regra2 = ctrl.Rule(
-    temperatura['agradavel'] & umidade['media'],
-    conforto['moderado'])
-regra3 = ctrl.Rule(
-    temperatura['quente'] & umidade['baixa'],
-    conforto['desconfortavel'])
-regra4 = ctrl.Rule(
-    temperatura['frio'] & umidade['baixa'],
-    conforto['confortavel'])
-regra5 = ctrl.Rule(
-    temperatura['frio'] & umidade['media'],
-    conforto['moderado'])
-regra6 = ctrl.Rule(
-    temperatura['agradavel'] & umidade['baixa'],
-    conforto['confortavel'])
-regra7 = ctrl.Rule(
-    temperatura['agradavel'] & umidade['alta'],
-    conforto['moderado'])
-regra8 = ctrl.Rule(
-    temperatura['quente'] & umidade['alta'],
-    conforto['desconfortavel'])
-sistema = ctrl.ControlSystem([
-    regra1,
-    regra2,
-    regra3,
-    regra4,
-    regra5,
-    regra6,
-    regra7,
-    regra8
-])
+regra1 = ctrl.Rule(temperatura['frio'] & umidade['alta'], conforto['desconfortavel'])
+regra2 = ctrl.Rule(temperatura['agradavel'] & umidade['media'], conforto['moderado'])
+regra3 = ctrl.Rule(temperatura['quente'] & umidade['baixa'], conforto['desconfortavel'])
+regra4 = ctrl.Rule(temperatura['frio'] & umidade['baixa'], conforto['confortavel'])
+regra5 = ctrl.Rule(temperatura['frio'] & umidade['media'], conforto['moderado'])
+regra6 = ctrl.Rule(temperatura['agradavel'] & umidade['baixa'], conforto['confortavel'])
+regra7 = ctrl.Rule(temperatura['agradavel'] & umidade['alta'], conforto['moderado'])
+regra8 = ctrl.Rule(temperatura['quente'] & umidade['alta'], conforto['desconfortavel'])
+sistema = ctrl.ControlSystem([regra1, regra2, regra3, regra4, regra5, regra6, regra7, regra8])
 st.header("Simulação Interativa")
-temp = st.slider(
-    "Temperatura (°C)",
-    0,
-    40,
-    22)
-umi = st.slider(
-    "Umidade (%)",
-    0,
-    100,
-    40)
+temp = st.slider("Temperatura (°C)", 0, 40, 22)
+umi = st.slider("Umidade (%)", 0, 100, 40)
 if st.button("Calcular"):
     simulador = ctrl.ControlSystemSimulation(sistema)
     simulador.input['temperatura'] = temp
     simulador.input['umidade'] = umi
     simulador.compute()
     resultado = simulador.output['conforto']
-    st.metric(
-        "Conforto Térmico",
-        f"{resultado:.2f}")
+    st.metric("Conforto Térmico", f"{resultado:.2f}")
     if resultado < 30:
         st.error("Desconfortável")
     elif resultado <= 70:
@@ -161,8 +126,7 @@ if st.button("Calcular"):
     else:
         st.success("Confortável")
 def calcular_conforto(temp, umi):
-    sim = ctrl.ControlSystemSimulation(
-        sistema)
+    sim = ctrl.ControlSystemSimulation(sistema)
     sim.input['temperatura'] = temp
     sim.input['umidade'] = umi
     sim.compute()
