@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 
 st.title("Sistema Fuzzy para Conforto Térmico")
 st.write(""" Este sistema utiliza Lógica Nebulosa para classificar o nível de conforto térmico com base na temperatura e na umidade. """)
-st.title("Sistema Fuzzy para Conforto Térmico")
-
 st.header("➣ Variáveis Nebulosas")
 col1, col2 = st.columns(2)
 with col1:
