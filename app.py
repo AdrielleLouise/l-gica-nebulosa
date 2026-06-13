@@ -90,7 +90,11 @@ Se Temperatura é Agradável E Umidade é Média, então o Conforto é **Moderad
 
 **Regra 3**
 
-Se Temperatura é Quente E Umidade é Baixa, então o Conforto é **Desconfortável.**""")
+Se Temperatura é Quente E Umidade é Baixa, então o Conforto é **Desconfortável.**"""
+
+---
+
+"""O sistema utiliza as 3 regras fornecidas no enunciado e regras complementares foram adicionadas apenas para ampliar a cobertura da simulação interativa e evitar combinações sem classificação.""")
 
 regra1 = ctrl.Rule(temperatura['frio'] & umidade['alta'], conforto['desconfortavel'])
 regra2 = ctrl.Rule(temperatura['agradavel'] & umidade['media'], conforto['moderado'])
