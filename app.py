@@ -90,7 +90,7 @@ Se Temperatura é Agradável E Umidade é Média, então o Conforto é **Moderad
 
 **Regra 3**
 
-Se Temperatura é Quente E Umidade é Baixa, então o Conforto é **Desconfortável.**"""
+Se Temperatura é Quente E Umidade é Baixa, então o Conforto é **Desconfortável.**
 
 ---
 
