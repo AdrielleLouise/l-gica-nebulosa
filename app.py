@@ -146,8 +146,7 @@ df = pd.DataFrame({
         round(caso2, 2)],
     "Classificação": [
         classificar(caso1),
-        classificar(caso2)
-    ]
+        classificar(caso2)]
 })
 st.table(df)
 st.header("Conclusão")
