@@ -131,9 +131,22 @@ def calcular_conforto(temp, umi):
 caso1 = calcular_conforto(22, 40)
 caso2 = calcular_conforto(35, 25)
 st.header(" ➤ Casos Solicitados pelo Professor Jorge")
-df = pd.DataFrame({"Temperatura (°C)": [22, 35], "Umidade (%)": [40, 25], "Conforto": 
-    [
-        round(caso1, 2), round(caso2, 2)
+def classificar(valor):
+    if valor < 30:
+        return "Desconfortável"
+    elif valor <= 70:
+        return "Moderado"
+    else:
+        return "Confortável"
+df = pd.DataFrame({
+    "Temperatura (°C)": [22, 35],
+    "Umidade (%)": [40, 25],
+    "Conforto": [
+        round(caso1, 2),
+        round(caso2, 2)],
+    "Classificação": [
+        classificar(caso1),
+        classificar(caso2)
     ]
 })
 st.table(df)
